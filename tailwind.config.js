@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        inter: ['Inter']
+        inter: ['Inter'],
+        nuni: ['Nunito']
       }, 
       colors: {
         pri: "#FF6363"
