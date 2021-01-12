@@ -2,11 +2,22 @@ import React from 'react';
 import stew from './image/stew.jpg';
 import curry from './image/noodles.jpg';
 import noodles from './image/curry.jpg';
-import './js/index'
+
+function displayNav() {
+
+  var menu = document.getElementById('menu');
+
+    if (menu.classList.contains('hidden')) {
+      return menu.classList.remove('hidden')
+    } else {
+      return menu.classList.add('hidden');
+    }
+  }
 
 function App() {
+
   return (
-    
+
     <div className='md:grid grid-cols-3 text-gray-600 font-nuni'>
       <div class='md:col-span-1 md:flex md:justify-end'>
         <nav class='text-right'>
@@ -14,13 +25,13 @@ function App() {
             <h1 className='p-4 text-2xl font-bold uppercase'> 
               <a href='/' class='hover:text-gray-800'>Reacttails</a>
             </h1>
-            <div class='px-4 cursor-pointer md:hidden'>
+            <div onClick={displayNav} class='px-4 cursor-pointer md:hidden'>
               <svg id='burger' class='w-6' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </div>
           </div>
-          <ul class='text-sm mt-6 hidden md:block' id='menu'>
+          <ul id='menu' class='text-sm mt-6 hidden md:block' >
             <li class='py-2 text-gray-700 font-bold'>
               <a class='px-4 flex justify-end border-r-4 border-red-400' href='#'> 
                 <span>Home</span>
@@ -53,8 +64,8 @@ function App() {
       <main class='md:col-span-2 px-16 py-6 bg-gray-100'>
 
         <div class='flex text-sm justify-center md:justify-end'>
-          <a class='btn text-red-400 border-red-400 md:border-2 hover:bg-red-400 hover:text-white ' href='#'>Log In</a>
-          <a class='ml-2 text-red-400 btn border-red-400 md:border-2 hover:bg-red-400 hover:text-white' href='#'>Sign Out</a> 
+          <a class='btn text-red-400 border-red-400 md:border-2 hover:bg-red-400 hover:text-white transition ease-out duration-700' href='#'>Log In</a>
+          <a class='ml-2 text-red-400 btn border-red-400 md:border-2 hover:bg-red-400 hover:text-white transition ease-out duration-700' href='#'>Sign Out</a> 
         </div>
  
         <header class=' py-2'>
@@ -118,7 +129,7 @@ function App() {
             </div>
 
             <div class='flex'>
-              <div className='btn hover:shadow-inner text-sm bg-green-200 text-green-700'>Load more</div>
+              <div className=' bg-gray-300 rounded-full p-2 font-semibold text-gray-700 transform hover:scale-110 transition ease-linear cursor-pointer duration-500'>Load more</div>
             </div>
 
         </div>
